@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/userData.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container" style="display: flex; flex-direction:column; font-size: larger; ">
+        <div class="header" style="margin:20px; font-size:50px; font-weight:800; color:black;">
+            Final Data
+        </div>
+        <hr style="color: white; width:100%;">
+        <!-- <div></div>  <div class="content" >
+            
+            <div class="data">
+            <div class="labels" > BMI </div>
+
+            <div role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" style="--value: 6"></div>
+        </div>
+        <div class="data">
+            <div class="labels" id="2"> Blood level </div>
+
+            <div role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" style="--value: 0"></div>
+        </div>
+        <div class="data">
+            <div class="labels" id="3"> Fever </div>
+
+            <div role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" style="--value: 80"></div>
+        </div>
+        <div class="data">
+            <div class="labels" id="4"> Total Lung capacity </div>
+
+            <div role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" style="--value: 60"></div>
+        </div>
+        <div class="data">
+            <div class="labels" id="5"> Body Temperature</div>
+
+            <div role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" style="--value: 50"></div>
+        </div>
+        <div class="data">
+            <div class="labels" id="6"> Vital Capacity </div>
+
+            <div role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" style="--value: 10"></div>
+        </div>
+             -->
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>INDEX</th>
+                    <th>Encrpited Data</th>
+                    <!-- <th>Evidence</th>
+                    <th>Argument</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows go here -->
+
+                <tr>
+                    <td>Mass</td>
+                    <td id="1">Residential Tenancies Act 2010, Sect. 63</td>
+                </tr>
+                <tr>
+                    <td>Sugar Level</td>
+                    <td id="2">Residential Tenancies Act 2010, Sect. 63</td>
+                </tr>
+                <tr>
+                    <td>Heart Rate</td>
+                    <td id="3">Residential Tenancies Act 2010, Sect. 63</td>
+                </tr>
+                <td>Body Temp</td>
+                <td id="4">Residential Tenancies Act 2010, Sect. 63</td>
+                </tr>
+                <tr>
+                    <td>WBC_Count</td>
+                    <td id="5">Residential Tenancies Act 2010, Sect. 63</td>
+                </tr>
+                <tr>
+                    <td>Vital Capcity</td>
+                    <td id="6">Residential Tenancies Act 2010, Sect. 63</td>
+                </tr>
+            </tbody>
+            </tbody>
+        </table>
+
+
+
+    </div>
+    </div>
+    </a>
+</body>
+<script>
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://172.31.77.131:8000/api/get-patient-data/4/");
+    xhr.send();
+    xhr.responseType = "json";
+    xhr.onload = () => {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log(xhr.response);
+            console.log(xhr.response['message']);
+            document.getElementById("1").innerHTML = xhr.response['data']['patient_info'][0]['mass']
+            document.getElementById("2").innerHTML = xhr.response['data']['patient_info'][0]['sugar_level']
+            document.getElementById("3").innerHTML = xhr.response['data']['patient_info'][0]['heart_rate']
+            document.getElementById("4").innerHTML = xhr.response['data']['patient_info'][0]['body_temp']
+            document.getElementById("5").innerHTML = xhr.response['data']['patient_info'][0]['wbc_count']
+            document.getElementById("6").innerHTML = xhr.response['data']['patient_info'][0]['vital_capcity']
+
+        } else {
+            console.log(`Error: ${xhr.status}`);
+        }
+    };
+</script>
+
+</html>
+<!-- 
+
+{
+    "msg": "message",
+    "data": {
+      "patient_info": [
+        {
+          "id": 1,
+          "patient_id": 2,
+          "gender": "Male",
+          "heart_rate": 105.4876978894899,
+          "height": 1.9979895534994536,
+          "mass": 47.92055073298733,
+          "sugar_level": 9.27120820199061,
+          "hb_level": 153.38671969053428,
+          "wbc_count": 5.283572443014397,
+          "residual_volume": 3.7785014328955198,
+          "vital_capcity": 5.993255280666348,
+          "body_temp": 37.23651180680823
+        }
+      ],
+      "patient_repote": [
+        {
+          "id": 1,
+          "patient_id": 2,
+          "bmi": "21.58627876356392",
+          "is_fever": true,
+          "total_lung_capacity": 7.111447858144141
+        }
+      ]
+    }
+  } -->
