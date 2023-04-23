@@ -16,16 +16,6 @@ This Git repository contains the source code, documentation, and other resources
 - Python web framework, Django
 - Database, SqLite
 
-The deployment steps may be similar to the ones listed above, with some modifications for Python-specific dependencies and libraries.
-
-## Directory Structure
-- `/src` : Contains the source code for the cloud service
-- `/docs` : Contains the documentation for the cloud service
-- `/tests` : Contains the unit and integration tests for the cloud service
-- `/scripts` : Contains the deployment scripts for Kubernetes and Docker
-- `/data` : Contains the sample healthcare data for testing the service
-- `/LICENSE` : Contains the license information for the project
-- `/README.md` : Contains the README file for the project
 
 ## Deployment Steps
 1. Clone the repository to your local machine
@@ -37,8 +27,4 @@ The deployment steps may be similar to the ones listed above, with some modifica
 7. Monitor the service for scalability, fault-tolerance, and performance
 8. Ensure the service complies with privacy regulations such as HIPAA and GDPR
 
-## Contributing
-We welcome contributions from the community. To contribute, please fork the repository, create a new branch, make your changes, and submit a pull request.
 
-## License
-This project is licensed under the MIT License. See the `LICENSE` file for more details
