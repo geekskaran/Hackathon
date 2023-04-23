@@ -1,4 +1,4 @@
-# README for the Git repository for Project Challenge 3
+# Project Challenge 3
 
 ## Overview
 This Git repository contains the source code, documentation, and other resources for the healthcare cloud service that uses homomorphic encryption to process sensitive healthcare data securely and efficiently. The service is designed to ensure the privacy and confidentiality of patient data while allowing computation on the encrypted data.
